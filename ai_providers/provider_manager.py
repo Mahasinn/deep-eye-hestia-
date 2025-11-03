@@ -60,6 +60,15 @@ class AIProviderManager:
                 logger.info("OLLAMA provider initialized")
             except Exception as e:
                 logger.warning(f"Failed to initialize OLLAMA provider: {e}")
+        # Mistral
+        if ai_config.get('mistral', {}).get('enabled', False):
+            try:
+                from ai_providers.mistral_provider import MistralProvider
+                self.providers['mistral'] = MistralProvider(ai_config['mistral'])
+                logger.info("Mistral provider initialized")
+            except Exception as e:
+                logger.warning(f"Failed to initialize Mistral provider: {e}")
+
     
     def set_provider(self, provider_name: str) -> bool:
         """
