@@ -35,6 +35,14 @@ ai_providers:
     temperature: 0.7
     timeout: 60
 
+  mistral:
+    enabled: true
+    api_key: "mistral-abc123def456ghi789jkl012mno345pq"
+    model: ""
+    temperature: 0.7
+    max_tokens: 2000
+    timeout: 60
+
 # Scanner Settings
 scanner:
   # Target configuration
